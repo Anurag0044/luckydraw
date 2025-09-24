@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heavenly Bites – Choco Lucky Draw</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Custom CSS -->
+    
+</head>
+<body class="min-h-screen flex items-center justify-center p-4">
+
+    <!-- Main Content Container -->
+    <div id="app-container" class="main-container bg-opacity-20 bg-black/20 backdrop-blur-sm rounded-3xl p-4 sm:p-8 w-full max-w-lg text-center">
+        <h1 class="heading-font text-5xl md:text-7xl glow-text mb-2">Heavenly Bites</h1>
+        <p class="text-xl md:text-2xl text-white mb-6">Choco Lucky Draw</p>
+        
+        <!-- Wheel Container -->
+        <div id="wheel-container" class="relative w-full aspect-square max-w-md mx-auto mb-6 flex items-center justify-center">
+            <div class="wheel-pointer absolute top-0 left-1/2 -translate-x-1/2 -translate-y-2 z-20">
+                <div id="pointer-tooltip" class="pointer-tooltip"></div>
+            </div>
+            <canvas id="wheel-canvas" class="w-full h-full"></canvas>
+        </div>
+
+        <!-- Spin Button -->
+        <button id="spin-button" class="spin-button font-bold text-2xl md:text-3xl py-4 px-8 rounded-full w-full max-w-xs mx-auto shadow-lg">
+            Spin Now – ₹20
+        </button>
+    </div>
+    
+    <!-- QR Code Payment Modal -->
+    <div id="qr-modal" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="modal-content rounded-2xl p-8 text-center max-w-md w-full relative transform transition-all duration-300 scale-95 opacity-0">
+            <h2 class="text-2xl font-bold mb-4 glow-text">Scan to Pay ₹20</h2>
+            <img src="QR.png" 
+                 alt="QR Code for payment" class="mx-auto my-4 rounded-lg border-4 border-yellow-300">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6">
+                 <button id="payment-success-button" class="action-button font-bold py-3 px-6 rounded-lg text-lg w-full">I have paid</button>
+                 <button id="close-qr-modal-button" class="secondary-button font-bold py-3 px-6 rounded-lg text-lg w-full">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Prize Modal -->
+    <div id="prize-modal" class="modal-container fixed inset-0 z-50 flex items-center justify-center p-4 hidden">
+        <div class="modal-content rounded-2xl p-8 text-center max-w-md w-full relative transform transition-all duration-300 scale-95 opacity-0">
+            <h2 id="modal-title" class="text-2xl font-bold mb-4 glow-text">Congratulations!</h2>
+            <p id="modal-prize" class="text-4xl heading-font mb-6 text-white"></p>
+            <button id="close-prize-modal-button" class="action-button font-bold py-2 px-6 rounded-lg text-lg">
+                Awesome!
+            </button>
+        </div>
+    </div>
+<script src="script.js"></script>
+   
+</body>
+</html>
+
